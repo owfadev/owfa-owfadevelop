@@ -1,6 +1,6 @@
 schema_version: 1
 id: owfadevelop
-version: 0.1
+version: 0.1.1
 compat: ">= 0.4.6"
 needs: [project.org.v1]
 members: [owfadevelop]
