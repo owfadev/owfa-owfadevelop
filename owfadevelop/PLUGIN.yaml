@@ -1,0 +1,21 @@
+id: owfadevelop
+schema_version: 1
+version: 0.1
+depends: []
+updated: 2026-11-16
+attachment:
+  - "PROJECT/owfadevelop/ — development knowledge territory: target.md (the pin — which owfa component this workspace develops; absent = the generic dev loop), env.md (environment page — host declarations the dev loop must honor) and releases.md (release ledger, append-only)"
+  - "command/owfa-develop/SKILL.md — the dev-loop command (pin gate + five steps): generic loop, plus the three owfa dev tracks when a target pin is declared"
+  - "scripts/check.py — attached audit: the pin, once present, must parse (rule inherited from project check 0.2, moved here when the member spun out)"
+fields: {}
+commands:
+  - owfa-develop
+inject: "Dev territory `PROJECT/owfadevelop/` (target pin + env + releases); loop → owfa-develop command; a declared owfa target pins this workspace's project, out-of-target work refused; details PLUGIN.md"
+usage:
+  - "Install semantics: this package NEEDS the project protocol (project.org.v1) — the kernel refuses to install it into a workspace without the project package. Installing it is the choice to develop owfa here: project protocol + owfadevelop is the recommended dev shape; a project workspace without it is a plain project, untouched by pin semantics"
+  - "Pin semantics: a workspace's nature is decided by its protocol; the project protocol makes the workspace a project. A target declared in PROJECT/owfadevelop/target.md (`target: owfa/<kernel|protocol|package:<id>>`) makes that project concrete — this workspace develops exactly that owfa component and nothing else; the loop refuses work outside the declared target, and changing the pin requires a decisions entry"
+  - "Dev-loop sessions run via the owfa-develop command (its SKILL is the operational detail); every session closes with a `develop` journal entry (journal machinery belongs to the project protocol)"
+  - "Distillation (on-demand bridge): a dev session's durable conclusion lands in PROJECT/decisions.md as a D-entry referencing the session's journal entry — process stays in the journal, reasons land in the ledger"
+checks:
+  - "scripts/check.py: target.md, once present, must carry exactly one `target: owfa/...` line plus a one-line why; a malformed pin is a check error (the loop must never enforce a pin it cannot parse)"
+  - "PROJECT/owfadevelop/env.md present once the territory is used (absent = the loop reads host declarations from nowhere) → info"

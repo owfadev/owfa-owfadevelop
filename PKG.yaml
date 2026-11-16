@@ -1,0 +1,8 @@
+schema_version: 1
+id: owfadevelop
+version: 0.1
+compat: ">= 0.4.6"
+needs: [project.org.v1]
+members: [owfadevelop]
+depends: [framework]
+disclosure: "Optional owfa-development package: needs the project protocol; carries the owfa-develop dev-loop command, the three owfa dev tracks, and the owfadevelop target pin. Purely local organization under PROJECT/owfadevelop/; no network services, no credentials."
